@@ -1,0 +1,48 @@
+
+\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[dvips]{graphicx}
+%\usepackage{epsfig}
+%\usepackage{amsmath, amssymb, amsthm}
+\usepackage{verbatim}
+\usepackage{moreverb}
+\usepackage{ifthen}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\topmargin -2.3cm
+\textheight 26.3cm
+\textwidth 18cm
+\oddsidemargin -1.0cm
+\evensidemargin 0cm
+
+% mots spécifiques
+\def\COO{\textsf{Conception Orientée Objet}}
+
+% l'entête
+\def\form{Formation non sp\'ecifi\'ee}
+\def\ladate{Date non sp\'ecifi\'ee}
+\def\mat{Mati\`ere non sp\'ecifi\'ee}
+\def\titr{Titre non sp\'ecifi\'e}
+
+\newcommand{\formation}[1]{\def\form{#1}}
+\renewcommand{\date}[1]{\def\ladate{#1}}
+\newcommand{\matiere}[1]{\def\mat{#1}}
+\newcommand{\titre}[1]{\def\titr{#1}}
+
+\def\ent{\noindent \textsf{Universit\'e d'Artois} \hfill \textsf{\form}
+
+\noindent \textsf{Facult\'e des Sciences Jean Perrin}  \hfill \textsf{\ladate}\\ 
+
+\centerline{\bf \Large \textsf{\mat}}
+\smallskip
+\hrule
+\medskip
+\centerline{\bf \large \textsf{\titr}}
+}
+
+\def\entete{
+\ent
+\bigskip
+}

@@ -1,0 +1,81 @@
+package mvc_controller;
+
+import mvc_global_enums.Direction;
+import mvc_global_enums.Grid_position;
+import mvc_model.Grid;
+
+public class New_Controller implements Runnable {
+
+	private Grid model;
+	volatile private int y_adder_accumulator;
+	private int y_adder;
+	private int timer_growing;
+	private boolean is_running;
+
+	private static final int BASE_GROWING = 5000;
+
+	public New_Controller(Grid model) {
+		this.model = model;
+		this.y_adder_accumulator = 0;
+		this.y_adder = 1;
+		this.timer_growing = BASE_GROWING / model.get_size_tile();
+	}
+
+	public void init_grid() {
+		this.model.generate_starting_grid();
+		this.model.notify_creation(this.model);
+	}
+
+	public void move_selector(Direction dir) {
+		if (this.model.can_move_selector(dir)) {
+			this.model.move_selector(dir);
+			this.model.notify_grid_selector_move(this.model, dir,
+					this.model.get_size_tile());
+		}
+	}
+
+	public void swap_position() {
+		this.model.swap_position_from_selector();
+		this.model.notify_grid_tiles_move(this.model, this.model.get_grid());
+	}
+
+	@Override
+	public void run() {
+		this.is_running = true;
+
+		while (is_running) {
+			this.y_adder_accumulator += y_adder;
+			this.model.all_up_tile(y_adder, y_adder_accumulator);
+			this.model.up_selector(y_adder, y_adder_accumulator);
+
+			if (this.y_adder_accumulator >= this.model.get_size_tile()) {
+				y_adder_accumulator = 0;
+			}
+
+			this.model.set_y_acc_ref(y_adder_accumulator);
+
+			if (this.model.has_lose()) {
+				is_running = false;
+				if (this.model.get_position() == Grid_position.LEFT) {
+					this.model.notify_grid_winner(Grid_position.RIGHT);
+				} else {
+					this.model.notify_grid_winner(Grid_position.LEFT);
+				}
+
+			}
+
+			this.model
+					.notify_grid_tiles_move(this.model, this.model.get_grid());
+			this.model.notify_grid_selector_move(this.model, Direction.UP,
+					y_adder);
+
+			try {
+				Thread.sleep(timer_growing);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+-r: No such file or directory
+run: No such file or directory

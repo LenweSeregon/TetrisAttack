@@ -1,0 +1,51 @@
+@startuml
+
+enum Color {
+     RED
+     BLUE
+     YELLOW
+     GREEN
+     GREY
+     MAUVE
+}
+
+enum Form {
+     HEART
+     TRIANGLE
+     STAR
+     CIRCLE
+     DIAMOND
+     EXCLAMATION
+}
+
+Class Grid {
+      - line : int
+      - collumn : int
+      .. Getters ..
+      + get_nb_line() : int
+      + get_nb_collumn() : int
+      .. Processing ..
+      + swap_position(int ,int)
+      + generate_line()
+      - apply_physic(int)
+      - check_combinaison(int)
+}
+
+Class Cell {
+      combinaison_detected : boolean
+      __
+      .. Getters ..
+      + get_color() : Color
+      + get_form() : Form
+      + get_combinaison_detected : boolean
+      .. Setters ..
+      + set_color(Color)
+      + set_form(Form)
+      + set_combinaison_detected(boolean)
+}
+
+Cell --> "1" Color
+Cell --> "1" Form
+Grid *- Cell 
+
+@enduml

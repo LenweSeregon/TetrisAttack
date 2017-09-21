@@ -1,0 +1,81 @@
+\documentclass[a4paper,utf8]{article}
+
+\usepackage{Rapport}
+
+
+\formation{L3MI}
+\date{17/03/2017}
+\matiere{Conception Orient\'ee Objet}
+\titre{Tetris Attack - Rapport - Présentation}
+
+\newcommand\code[1]{\textsf{#1}}
+\newcommand\srdjan[1]{{\color{red} #1}}
+
+\begin{document}
+
+\entete
+
+
+\begin{document}
+
+\section{Le projet}
+Notre projet consiste en l'impl\'ementation d'une version du c\'el\`ebre jeu "Tetris-Attack". La version pr\'esent\'e aujourd'hui n'est qu'une version temporaire, elle comporte cependant un mode de jeu 1Vs1 ou le but est de rester en vie le plus longtemps possible en effectuant des mouvements de blocs dans la grille pour en regroup\'e au moins 3 de la m\^{e}me couleur, et de tout faire pour faire perdre le joueur humain adverse.
+
+\section{L\''\`equipe}
+Notre \'equipe se compose de 4 membres : 
+\begin{itemize}
+\item Charlotte qui a r\'ealis\'e la fen\^{e}tre du menu, celle des cr\'edits, et celle d’explication du jeu.
+\item Antoine qui a r\'ealis\'e la fen\^{e}tre des options (mappage des touches, gestion du son) ainsi que l'uml
+\item Bertrand qui a r\'ealis\'e la fen\^{e}tre de l’accueil, les graphisme et les effets sonore du jeu.
+\item Nicolas qui s'est charg\'e de l'impl\'ementation de la logique du jeu 
+\end{itemize}
+
+\section{Le fonctionnement}
+Notre jeu fonctionne de mani\`ere assez simple.\smallbreak
+L'application se lance via la commande java -jar Tetris-Attack.jar
+Une fen\^{e}tre s'ouvre affichant l'accueil, ce dernier se pr\'esente sous la forme d'une frame anim\'e invitant l'utilisateur \`a appuyer sur une touche.\smallbreak
+Une fois que s'est fait, la fenetre change pour proposer le menu, il se compose d'une fenetre o\`u l'on trouve plusieurs boutons qui sont : Play, How to play, options, credit, exite game. L'utilisateur peut se d\'eplacer parmis ces boutons grace aux fl\'eches haut et bas, sa position \'etant indiqu\'e par le curseur rose. Une fois sur le bon bouton, l'appui sur entr\'e lance l'action du bouton.\smallbreak
+
+\subsection{How to play}
+Cette section pr\'esente le fonctionnement du jeu, via une suite d'image d\'ecrivant chacune un aspect du jeu.
+
+\subsection{Options}
+Cette sectin permet la gestion des options, elle contient plusisuers sous sections, list\'ees comme 
+\begin{itemize}
+\item 1 player qui permet le mappage des touches du joueur 1
+\item 2 player qui permet le mappage des touches du joueur 2
+\item audio qui permetra d'activer ou non les sons du jeu
+\item exit qui permet de quitter les options
+\end{itemize}
+
+\subsection{Credit}
+Cette section contient les cr\'edits de notre application
+
+\subsection{Play}
+Ce bouton lance le jeu, de base en mode 1Vs1, mais a terme il enverra sur une nouvelle section qui offrira le choix du mode de jeu.
+
+\subsection{Le jeu}
+Une fois le jeu lanc\'e, la fenetre s'update de nouveau, elle pr\'esente d\'esormais deux grilles de part et d'autre de l'\'ecran, une pour le joueur 1, l'autre pour le joueur 2.\smallbreak
+Le joueur 1 se d\'eplace de base en utilisant des touches q z s d et la touche e pour effectuer un swap, pour le joueur 2 ce sont les touches o k l m et la touche p qui sont utilis\'ees.
+
+\section{Les probl\'emes rencontr\'es}
+Lors du d\'eveloppement de l'application, plusieurs probl\`emes ont \'etaient rencontr\'es : 
+\begin{itemize}
+\item Organisation de l'application (plusieurs Frame)
+\item Soucis de musique ( pour les dur\'ees < 1 secondes)
+\item Oublis de r\`egles
+\item (Quelques) conflits git
+\item Gestion des ressources
+\item Gestion des focus sur les diff\'erents panels du menu
+\end{itemize}
+
+\section{Pour la suite}
+\begin{itemize}
+\item Am\'elioration de design
+\item Rajout d'animations quand on clique dans le menu
+\item Rajout du mode de jeu 1Vs1
+\item Am\'elioration du panel Son
+\item Utilisation de l'XML pour le mappage des touches
+\end{itemize}
+
+\end{document}

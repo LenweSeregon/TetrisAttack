@@ -1,0 +1,109 @@
+\documentclass[a4paper,utf8]{article}
+\usepackage{exemple}
+\usepackage[normalem]{ulem}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{MnSymbol,wasysym}
+\usepackage{hyperref}
+\usepackage[french]{babel}
+
+\formation{L3MI}
+\date{20/02/2017}
+\matiere{Conception Orient\'ee Objet}
+\titre{Tetris Attack - Rapport 2 - Avancement}
+
+\newcommand\code[1]{\textsf{#1}}
+\newcommand\srdjan[1]{{\color{red} #1}}
+
+\begin{document}
+
+\entete
+
+\section{Ce qui a \'et\'e fait et reste \`a faire dans la r\'epartion actuelle des t\^{a}ches}
+	\subsection{Charlotte}
+		Charlotte s'occupe de la partie principale du menu, des cr\'edits et de l'aide.
+		\subsubsection{Travail r\'ealis\'e}
+			\begin{itemize}
+				\item La fen\^{e}tre du menu en lui m\^{e}me contenant chacun des \'el\'ements demand\'es
+				\item Le d\'eplacement parmis les boutons avec les fl\`eches directionnelles haut et bas
+				\item Chaque bouton est fonctionnel, choisir l'un d'eux d\'eclenche la bonne action (pour le moment, ouverture d'une nouvelle JFrame)
+				\item Le design du menu est bien avanc\'e
+			\end{itemize}
+		\subsubsection{Travail \`a r\'ealiser ensuite}
+			\begin{itemize}
+				\item Supprimer le mouseListener
+				\item R\'egler un soucis de touche
+				\item Finir le design
+				\item UML
+				\item Rajouter une musique
+			\end{itemize}
+	\subsection{Antoine}
+		Antoine s'occupe du menu des options et de la gestion des changements inh\'erents aux modifications de celles-ci.
+		\subsubsection{Travail r\'ealis\'e}
+			\begin{itemize}
+				\item La fen\^{e}tre des options en elle-m\^{e}me
+				\item Le d\'eplacement parmi les boutons avec les fl\`eches directionnelles haut et bas
+				\item Impl\'ementation des options (commandes joueur 1, joueur 2 et son)
+				\item Le design du menu est bien avanc\'e
+			\end{itemize}
+		\subsubsection{Travail \`a r\'ealiser ensuite}
+			\begin{itemize}
+				\item Supprimer l'actionListener
+				\item R\'egler un soucis de focus
+				\item Finir le design
+				\item UML
+				\item Rajouter une musique
+				\item Rajouter l'option de redimensionnage 
+			\end{itemize}
+	\subsection{Bertrand}
+		Bertrand s'occupe de l'acceuil, du design du jeu et de la gestion des ressources.
+		\subsubsection{Travail r\'ealis\'e}
+			\begin{itemize}
+				\item La fen\^{e}tre de l'acceuil en elle-m\^{e}me
+				\item Une des animations (le "push any key")
+				\item Ajout de musique
+			\end{itemize}
+		\subsubsection{Travail \`a r\'ealiser ensuite}
+			\begin{itemize}
+				\item Acceuil :
+					\begin{itemize}
+						\item Lancer le menu et non le jeu quand on appuie sur une touche
+						\item Supprimer le gif de fond et r\'ealiser une vraie animation
+						\item Redimensionner
+					\end{itemize}
+				\item Design: finir le design d\'ej\`a entam\'e
+				\item Ressources : une fois tous les designs finis, faire le m\'enage de toutes les ressources inutilis\'ees
+				\item UML
+			\end{itemize}
+	\subsection{Nicolas}
+		Nicolas s'occupe du gameplay.
+		\subsubsection{Travail r\'ealis\'e}
+			\begin{itemize}
+				\item La fen\^{e}tre du jeu
+				\item D\'eplacement de chacun des joueurs dans sa propre grille
+				\item Possibilit\'e de swap deux cases
+				\item Gestion de la d\'etection de suite de cases
+				\item Timer
+				\item Apparition de blocs toutes les x secondes
+				\item D\'etection de victoire/defaite
+			\end{itemize}
+		\subsubsection{Travail \`a r\'ealiser ensuite}
+			\begin{itemize}
+				\item R\'egler quelques bug signal\'es sur slack
+				\item Faire appara\^{i}tre petit \`a petit la ligne en bas
+				\item Rajouter une vraie action en cas de victoire
+				\item Apparition de blocs "mur" chez l'adversaire en cas de coup sp\'ecial
+				\item Affichage des scores
+				\item IA
+			\end{itemize}
+
+
+\section{Apr\`es tout \c{c}a}
+	Une fois tout ce travail r\'ealis\'e, nous aurons d\'ej\`a une application bien fonctionnelle. Cependant, nous n'aurons l\`a qu'une version basique du jeu ; l'impl\'ementation des am\'eliorations, ajouts et id\'ees du rapport n\°1 ne sont encore assign\'e \`a aucun d'entre nous, nous verrons en fonction du temps restant. Ci celui-ci nous le permet, quand l'un de nous aura fini \`a 100\% sa partie, certaines de ces options seront s\'erieusement envisag\'ees. Pour rappel :
+	\begin{itemize}
+		\item Si le joueur r\'ealise une forme particuli\`ere avec ses blocs (peut-\^{e}tre une forme de banane), une action sp\'ecifique est lanc\'ee. Celle-ci pourrait \^{e}tre une sorte d'easter egg qui pourrait \^{e}tre l'apparition d'une banane qui, si on arrive \`a l'utiliser, pourrait provoquer une assez grosse explosion sur la grille du joueur.
+		\item Possibilit\'e aussi dans le m\^{e}me style : des actions particuli\`eres pourrait d\'eclencher des petites attaques contre l'adversaire, par exemple envoyer une banane qui en explosant bloquerait temporairement des cases, ou rendrait une zone "glissante" dans le sens o\`u il y serait plus compliqu\'e d'y bouger les cases \`a l'endroit voulu.
+	\end{itemize}
+
+
+\end{document}
